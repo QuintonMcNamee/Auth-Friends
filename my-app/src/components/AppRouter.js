@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import LoginForm from './LoginForm';
+import FriendsData from './FriendsData';
 import PrivateRoute from './PrivateRoute';
 
 const AppRouter = () => {
@@ -9,7 +10,7 @@ const AppRouter = () => {
     <div>
       <Route exact path='/' component='' />
       <Route path='/login' component={LoginForm} />
-      <PrivateRoute exact path='/protected' component={PrivateRoute} />
+      <PrivateRoute exact path='/friends' component={FriendsData} />
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
 
-const LoginForm = () => {
+const LoginForm = (props) => {
 
   // hooks
   const [user, setUser] = useState({});
@@ -21,7 +21,7 @@ const LoginForm = () => {
         console.log(response)
         setIsLoading(false);
         localStorage.setItem('token', response.data.payload);
-
+        props.history.push('/friends');
       })
       .catch(error => {
         console.log(error)
