@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
 
@@ -20,15 +20,13 @@ const LoginForm = () => {
         console.log('user', user)
         console.log(response)
         setIsLoading(false);
+        localStorage.setItem('token', response.data.payload);
+
       })
       .catch(error => {
         console.log(error)
       });
   }
-
-  // useEffect(() => {
-  //   console.log(user);
-  // }, [user])
 
   return (
     <>
