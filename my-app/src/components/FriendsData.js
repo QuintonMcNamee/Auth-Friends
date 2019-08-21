@@ -37,6 +37,7 @@ const FriendsData = () => {
     axiosWithAuth().post('http://localhost:5000/api/friends', {id: new Date(), name: friendName, age: friendAge, email: friendEmail})
       .then(response => {
         console.log(response);
+        setFriendsData(response.data);
       })
       .catch(error => {
         console.log(error);
